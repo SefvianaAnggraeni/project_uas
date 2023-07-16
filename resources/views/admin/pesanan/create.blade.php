@@ -1,7 +1,7 @@
 @extends('admin.includes.apps')
 
 @section('title')
-Admin - Tambah Pesanan
+Pelanggan - Tambah Pesanan
 @endsection
 
 @section('content')

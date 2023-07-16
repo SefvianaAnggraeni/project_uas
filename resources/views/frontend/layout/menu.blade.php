@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="col-lg-6 home" data-aos="zoom-out" data-aos-delay="200">
-      <img src="assets/img/home.png" class="img-fluid" alt="" style="float: right;">
+      <img src="{{ asset ('frontend/assets/img/home.png')}}" class="img-fluid" alt="" style="float: right;">
     </div>
   </div>
 </div>
