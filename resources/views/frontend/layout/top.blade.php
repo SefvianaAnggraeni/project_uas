@@ -46,7 +46,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="home" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png">
+        <img src="{{asset ('frontend/assets/img/logo.png')}}">
         <span>MyJShop</span>
       </a>
 
