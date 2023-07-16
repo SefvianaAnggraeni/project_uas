@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Freast Official Store. Self Confidence is The Best Outfit">
     <meta name="author" content="Freast Official Store">
-    <link rel="apple-touch-icon" href="/assets/icon/152.png">
-    <link rel="icon" href="/assets/images/icon/16.png">
-    <link rel="icon" href="/assets/images/icon/32.png">
-    <link rel="icon" href="/assets/images/icon/64.png">
-    <link rel="icon" href="/assets/images/icon/96.png">
-    <meta name="msapplication-TileImage" content="/assets/images/icon/16.png">
+    <link rel="apple-touch-icon" href="{{ asset ('vendor/vendor/assets/icon/152.png')}}">
+    <link rel="icon" href="{{ asset ('vendor/vendor/assets/images/icon/16.png')}}">
+    <link rel="icon" href="{{ asset ('vendor/vendor/assets/images/icon/32.png')}}">
+    <link rel="icon" href="{{ asset ('vendor/vendor/assets/images/icon/64.png')}}">
+    <link rel="icon" href="{{ asset ('vendor/vendor/assets/images/icon/96.png')}}">
+    <meta name="msapplication-TileImage" content="{{ asset ('vendor/vendor/assets/images/icon/16.png')}}">
 
     <title>@yield('title')</title>
 

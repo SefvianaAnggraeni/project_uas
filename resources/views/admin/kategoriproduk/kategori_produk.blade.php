@@ -5,6 +5,7 @@ Admin - Kategori Produk
 @endsection
 
 @section('content')
+@if (Auth::user()->role != 'pelanggan')
 <!-- Begin Page Content -->
 <div class="container-fluid">
   <h1 class="mt-4">Kategori Produk</h1>
@@ -14,8 +15,10 @@ Admin - Kategori Produk
   </ol>
   <div class="card mb-4">
     <div class="card-header">
-      <a href="{{ url('admin/kategoriproduk/create') }}" class="btn btn-primary">
+    @if (Auth::user()->role == 'admin')
+          <a href="{{ url('admin/kategoriproduk/create') }}" class="btn btn-primary">
         Tambah Data</a>
+    @endif
     </div>
     <div class="card mb-4">
       <div class="card-header">
@@ -39,8 +42,10 @@ Admin - Kategori Produk
                 <td> {{$no}}</td>
                 <td>{{$kategori->nama}} </td>
                 <td>
-                  <a href="{{ url ('admin/kategoriproduk/edit/'. $kategori->id) }}" class="btn btn-warning">Edit</a> 
+                  <a href="{{ url ('admin/kategoriproduk/edit/'. $kategori->id) }}" class="btn btn-warning">Edit</a>
+                  @if (Auth::user()->role == 'admin') 
                   <a href="{{ url ('admin/kategoriproduk/delete/'. $kategori->id) }}" class="btn btn-danger">Delete</a>
+                  @endif
                 </td>
               </tr>
               @php $no++ @endphp
@@ -53,7 +58,9 @@ Admin - Kategori Produk
   </div>
 </div>
 <!-- End of Main Content -->
-
+    @else
+        @include('admin.access_denied')
+    @endif
 @endsection
 
 @push('addon-script')

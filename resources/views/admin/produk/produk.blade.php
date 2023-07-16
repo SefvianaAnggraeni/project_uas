@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+@if (Auth::user()->role != 'pelanggan')
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <h1 class="mt-4">Tables</h1>
@@ -14,8 +15,10 @@
         </ol>
         <div class="card mb-4">
             <div class="card-header">
+            @if (Auth::user()->role == 'admin')
                 <a href="{{ url('admin/produk/create') }}" class="btn btn-primary">
                     Tambah Data</a>
+            @endif        
             </div>
             <div class="card mb-4">
                 <div class="card-header">
@@ -59,8 +62,10 @@
                                                 data-id="{{ $prod->id }}">
                                                 Detail
                                             </button>
+                                            @if (Auth::user()->role == 'admin')
                                             <a href="{{ url('admin/produk/delete/' . $prod->id) }}"
                                                 class="btn btn-danger m-1">Delete</a>
+                                            @endif    
                                         </td>
 
                                         <td></td>
@@ -85,6 +90,7 @@
             </div>
         </div>
     </div>
+@endif
 @endsection
 
 @push('addon-script')

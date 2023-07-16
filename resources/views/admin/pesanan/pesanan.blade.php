@@ -5,6 +5,7 @@ Admin - Pesanan
 @endsection
 
 @section('content')
+@if (Auth::user()->role != 'pelanggan')
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <h1 class="mt-4">Pesanan</h1>
@@ -14,7 +15,9 @@ Admin - Pesanan
     </ol>
     <div class="card mb-4">
         <div class="card-header">
+        @if (Auth::user()->role == 'admin')
             <a href="{{ url('admin/pesanan/create') }}" class="btn btn-primary">Tambah Data</a>
+        @endif
         </div>
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
@@ -52,7 +55,9 @@ Admin - Pesanan
                         <td>
                             <a href="{{ url('admin/pesanan/edit/'. $pes->id) }}" class="btn btn-warning m-1">Edit</a> 
                             <button type="button" class="btn btn-info m-1 btn-detail" data-id="{{ $pes->id }}">Detail </button>
+                            @if (Auth::user()->role == 'admin') 
                             <a href="{{ url('admin/pesanan/delete/'. $pes->id) }}" class="btn btn-danger m-1">Delete</a>
+                            @endif
                         </td>
                     </tr>
                     @php
@@ -73,7 +78,7 @@ Admin - Pesanan
         </div>
     </div>
 </div>
-
+@endif
 @endsection
 
 @push('addon-script')
